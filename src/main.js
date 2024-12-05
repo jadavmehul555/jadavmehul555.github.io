@@ -4,10 +4,12 @@ export default function add(inputString) {
         throw new Error('Unsupported data type, expected a string')
     }
 
-    const number = Number(inputString)
-    if(!isNaN(number)) {
-        return number
-    }
+    const numbers = inputString.split('').map(i => Number(i))
 
-    return 0
+    return numbers.reduce((sum, item) => {
+        if(!isNaN(item)) {
+            sum += item
+        }
+        return sum;
+    }, 0)
 }

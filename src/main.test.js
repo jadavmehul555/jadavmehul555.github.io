@@ -18,4 +18,8 @@ describe('Sum', () => {
         expect(() => sum({})).toThrow(message);
         expect(() => sum(false)).toThrow(message)
     })
+
+    test('returns sum of numbers when input string contains multiple numbers', () => {
+        expect(sum('1,2,3')).toBe(6)
+    })
 })
