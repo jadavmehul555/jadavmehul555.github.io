@@ -22,4 +22,9 @@ describe('Sum', () => {
     test('returns sum of numbers when input string contains multiple numbers', () => {
         expect(sum('1,2,3')).toBe(6)
     })
+
+    
+    test('returns sum of numbers when input string contains new line', () => {
+        expect(sum('1\n2,3')).toBe(6)
+    })
 })

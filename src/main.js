@@ -4,7 +4,8 @@ export default function add(inputString) {
         throw new Error('Unsupported data type, expected a string')
     }
 
-    const numbers = inputString.split('').map(i => Number(i))
+    // either split by new line or ,
+    const numbers = inputString.split(/\n|,/).map(i => Number(i))
 
     return numbers.reduce((sum, item) => {
         if(!isNaN(item)) {
